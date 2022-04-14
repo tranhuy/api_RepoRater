@@ -19,6 +19,12 @@ const startServer = async () => {
   // );
 
   logger.info(`Apollo Server ready at http://localhost:${APOLLO_PORT}`);
+
+  // issues ping to server to prevent Heroku dynos from sleeping
+  setInterval(() => {
+    console.log(`Pinging ${process.env.APP_URL}`);
+    http.get(process.env.APP_URL);   
+}, 600000);
 };
 
 startServer();
