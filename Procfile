@@ -1,1 +1,1 @@
-web: npm start
+web: npm run migrate:latest && knex seed:run && node -r esm ./src/index.js
