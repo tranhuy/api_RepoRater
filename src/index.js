@@ -24,7 +24,7 @@ const startServer = async () => {
   setInterval(() => {
     console.log(`Pinging ${process.env.APP_URL}`);
     http.get(process.env.APP_URL);   
-}, 600000);
+  }, 600000);
 };
 
 startServer();
